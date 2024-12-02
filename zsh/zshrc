@@ -13,17 +13,16 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle dirhistory
 antigen bundle sudo
 antigen bundle copybuffer
+antigen bundle zsh-delete-prompt
 
 # Robbyrussel theme
 antigen theme robbyrussell
-#Starship pure prompt theme
-#eval "$(starship init zsh)"
 
 # Apply Antigen
 antigen apply
 
-
 # Aliasses
 alias ll='ls -la'
+alias die='sudo poweroff'
 
 export PATH="$HOME/bin:$PATH"

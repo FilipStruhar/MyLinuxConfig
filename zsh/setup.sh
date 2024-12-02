@@ -44,7 +44,7 @@ fi
 if [ ! -e ~/.zshrc ]; then
 	echo "Creating zsh config..."
 	echo " "
-	cp .zshrc ~/.zshrc
+	cp zshrc ~/.zshrc
 fi
 
 
