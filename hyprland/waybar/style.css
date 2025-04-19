@@ -1,0 +1,110 @@
+@import "mocha.css";
+
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   "Hurmit Nerd Font";
+    font-size:     13px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+    color: @text;
+}
+
+window#waybar {
+    background-color: shade(@base, 0.9);
+    border: 2px solid alpha(@crust, 0.3);
+}
+
+window#waybar.solo {
+    color: rgba(53, 185, 171, 1);
+}
+
+#workspaces {
+    margin: 0 5px;
+}
+
+#custom-scratchpad {
+    margin: 0px	5px;
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: rgba(53, 185, 171, 1);
+}
+
+#workspaces button.focused {
+    color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.visible {
+    color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.urgent {
+    color: rgba(33, 164, 223, 1);
+}
+
+#mode, 
+#battery, 
+#cpu, 
+#memory, 
+#network, 
+#bluetooth,
+#pulseaudio, 
+#idle_inhibitor, 
+#temperature,
+#custom-layout,
+#backlight {
+    margin: 0px 6px 0px 10px;
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+}
+
+#clock {
+    margin: 0px 6px 0px 10px;
+    font-size:     15px;
+}
+
+#battery.warning {
+   color: rgba(255, 210, 4, 1);
+   font-size: 14px
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+    font-size: 14px
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+    font-size: 14px;
+}
+
+#bluetooth.disabled {
+    color: rgba(128, 128, 128, 1);
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+}
+
+#bluetooth.off {
+    color: rgba(128, 128, 128, 1);
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+}
+
+#bluetooth.connected {
+    color: rgba(115, 186, 37, 1);
+    font-family: "FontAwesome 6 Free", "Source Sans Pro";
+}
+
+#custom-notification {
+   margin: 0px 8px 0px 10px;
+}
+
+
+#tray {
+    background-color: #cba6f7; /* Purple Bck */
+    padding: 0px 8px 0px 8px;
+}
+
