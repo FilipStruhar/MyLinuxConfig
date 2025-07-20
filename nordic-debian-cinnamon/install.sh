@@ -32,6 +32,19 @@ ask_confirmation() {
     fi
 }
 
+# Function to set wallpaper
+set_wallpaper() {
+    if [ -f "$1" ]; then
+        print_info "Setting the wallpaper..."
+        # Change the wallpaper using gsettings
+        gsettings set org.cinnamon.desktop.background picture-uri "file://$1"
+        gsettings set org.cinnamon.desktop.background picture-options "fill"
+        print_success "Wallpaper set successfully!"
+    else
+        print_error "Wallpaper file does not exist: $1"
+    fi
+}
+
 # SETUP #
 print_heading "Pre-setup: Ensure you're running Debian with Cinnamon DE!"
 ask_confirmation "This script is designed for Debian with the Cinnamon Desktop Environment. Do you want to continue?"
@@ -139,6 +152,19 @@ fi
 sudo "$HOME/Downloads/grub2-nord-theme/install.sh"
 
 print_success "GRUB theme installation complete!"
+
+# Set the wallpaper
+print_heading "Setting wallpaper..."
+cp nord-lake.png "$HOME/Pictures"
+WALLPAPER_PATH="$HOME/Pictures/nord-lake.png"
+
+# Check if the wallpaper file exists
+if [ ! -f "$WALLPAPER_PATH" ]; then
+    print_error "Wallpaper file not found: $WALLPAPER_PATH. Exiting."
+    exit 1
+else
+    set_wallpaper "$WALLPAPER_PATH"
+fi
 
 # Final user instructions
 print_heading "Setup Complete!"
